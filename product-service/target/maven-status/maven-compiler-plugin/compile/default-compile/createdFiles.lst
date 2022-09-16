@@ -1,0 +1,3 @@
+com\vinsguru\productservice\ProductServiceApplication.class
+com\vinsguru\productservice\dto\ProductDto.class
+com\vinsguru\productservice\entity\Ptroduct.class
