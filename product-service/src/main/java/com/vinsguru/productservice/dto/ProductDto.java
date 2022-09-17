@@ -49,9 +49,7 @@ public class ProductDto {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
+		if ((obj == null) || (getClass() != obj.getClass()))
 			return false;
 		ProductDto other = (ProductDto) obj;
 		return Objects.equals(description, other.description) && Objects.equals(id, other.id)

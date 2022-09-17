@@ -52,9 +52,7 @@ public class Product {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
+		if ((obj == null) || (getClass() != obj.getClass()))
 			return false;
 		Product other = (Product) obj;
 		return Objects.equals(description, other.description) && Objects.equals(id, other.id)
