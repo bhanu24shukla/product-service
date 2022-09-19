@@ -1,3 +1,9 @@
 com\vinsguru\productservice\ProductServiceApplication.class
+com\vinsguru\productservice\repository\ProductRepository.class
+com\vinsguru\productservice\service\DataSetupService.class
+com\vinsguru\productservice\util\EntityDtoUtil.class
+com\vinsguru\productservice\controller\ProductController.class
+com\vinsguru\productservice\entity\Product.class
 com\vinsguru\productservice\dto\ProductDto.class
-com\vinsguru\productservice\entity\Ptroduct.class
+com\vinsguru\productservice\service\ProductServiceImpl.class
+com\vinsguru\productservice\service\ProductService.class
