@@ -1,5 +1,7 @@
 package com.vinsguru.productservice.controller;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -37,6 +39,7 @@ public class ProductController {
 
 	@GetMapping("{id}")
 	public Mono<ResponseEntity<ProductDto>> getProductById(@PathVariable String id) {
+		this.simulateThreadException();
 		return this.service.getProductById(id).map(ResponseEntity::ok)
 				.defaultIfEmpty(ResponseEntity.notFound().build());
 	}
@@ -56,6 +59,13 @@ public class ProductController {
 	@DeleteMapping("{id}")
 	public Mono<Void> deleteProduct(@PathVariable String id) {
 		return this.service.deleteProduct(id);
+	}
+
+	public void simulateThreadException() {
+		int num = ThreadLocalRandom.current().nextInt(1, 10);
+		if (num > 5) {
+			throw new RuntimeException("something is wrong");
+		}
 	}
 
 }
